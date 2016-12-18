@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>梦唉</title>
+  <title>高级 JavaScript (一) | 梦唉</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -112,6 +112,19 @@
             </li>
             
             
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/H5的概念与新增标签/" class="animsition-link">H5的概念与新增标签<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Me/" class="animsition-link">Me<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/高级JavaScript/" class="animsition-link">高级JavaScript<small>(6)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
             
             <li>
                 <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
@@ -197,81 +210,78 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2016-12-03T05:37:55.639Z" itemprop="datePublished">
-          2016-12-03
+      <time datetime="2016-10-26T16:00:00.000Z" itemprop="datePublished">
+          2016-10-27
       </time>
     
 </span>
-                <h1></h1>
+                <h1>高级 JavaScript (一)</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="JavaScript高级第一天"><a href="#JavaScript高级第一天" class="headerlink" title="JavaScript高级第一天"></a>JavaScript高级第一天</h1><h2 id="JavaScript基础知识复习"><a href="#JavaScript基础知识复习" class="headerlink" title="JavaScript基础知识复习"></a>JavaScript基础知识复习</h2><p>在学习高级对象之前应该熟练的使用JS 下面是一些JS的基本知识</p>
-<h3 id="JavaScript的基本组成"><a href="#JavaScript的基本组成" class="headerlink" title="JavaScript的基本组成"></a>JavaScript的基本组成</h3><pre><code>* ECMAScript     规定了JavaScript的语法规范
-* DOM            提供了访问页面元素的API
-* BOM            提供了访问浏览器相关信息的API
-</code></pre><h3 id="JavaScript的数据类型"><a href="#JavaScript的数据类型" class="headerlink" title="JavaScript的数据类型"></a>JavaScript的数据类型</h3><h4 id="简单类型"><a href="#简单类型" class="headerlink" title="简单类型"></a>简单类型</h4><pre><code>* string
-* number
-* boolean
-* undefined
-</code></pre><h4 id="复杂类型"><a href="#复杂类型" class="headerlink" title="复杂类型"></a>复杂类型</h4><pre><code>* Object
-* function
-* Array
-* Date
-* RegExp
-* Math（对象）
-* String
-* Number
-* Boolean
-* null(特殊的)
-</code></pre><h4 id="获取类型的关键字-typeof"><a href="#获取类型的关键字-typeof" class="headerlink" title="获取类型的关键字 typeof"></a>获取类型的关键字 typeof</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> 变量名（表达式）</div><div class="line"><span class="comment">//返回值为字符串类型</span></div></pre></td></tr></table></figure>
-<h4 id="引用类型-值类型"><a href="#引用类型-值类型" class="headerlink" title="引用类型 值类型"></a>引用类型 值类型</h4><h5 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h5><pre><code>存储的是数据的地址的数据就是引用类型的数据
-</code></pre><h5 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h5><pre><code>存储的数据本身的数据就是值类型的数据
-</code></pre><h5 id="赋值特征"><a href="#赋值特征" class="headerlink" title="赋值特征"></a>赋值特征</h5><pre><code>* 值类型进行赋值的时候，直接将数据复制一份赋值给新的变量，两份数据互不影响
-* 引用类型进行赋值的时候，将数据的地址复制一份赋值给新的变量，两个变量指向同一个对象，两个互相影响
-</code></pre><h3 id="in-关键字"><a href="#in-关键字" class="headerlink" title="in 关键字"></a>in 关键字</h3><h4 id="for-in"><a href="#for-in" class="headerlink" title="for-in"></a>for-in</h4><pre><code>用来遍历对象的属性的，每次遍历到的属性是字符串类型的
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> obj)&#123;</div><div class="line">    <span class="comment">//这里的k就是每个键</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><h4 id="in"><a href="#in" class="headerlink" title="in"></a>in</h4><pre><code>检测对象中是否存在某个属性
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">属性名 <span class="keyword">in</span> 对象名</div></pre></td></tr></table></figure>
-</code></pre><h3 id="逻辑中断"><a href="#逻辑中断" class="headerlink" title="逻辑中断"></a>逻辑中断</h3><h4 id=""><a href="#" class="headerlink" title="||"></a>||</h4><pre><code>表达式1 || 表达式2
-如果表达式1为真，就返回表达式1，如果表达式1位假，则返回表达式2
-</code></pre><h4 id="amp-amp"><a href="#amp-amp" class="headerlink" title="&amp;&amp;"></a>&amp;&amp;</h4><pre><code>表达式1 &amp;&amp; 表达式2
-如果表达式1为真，就返回表达式2，如果表达式1位假，则返回表达式1
-</code></pre><h3 id="delete关键字"><a href="#delete关键字" class="headerlink" title="delete关键字"></a>delete关键字</h3><pre><code>* 删除未使用var声明的变量
-* 删除对象的属性
-* `window`有自带的属性`name`
-</code></pre><h3 id="continue-break"><a href="#continue-break" class="headerlink" title="continue break"></a>continue break</h3><pre><code>* continue 跳出本次循环，继续下次循环
-* break 跳出整个循环，继续执行循环之后的代码
-</code></pre><h3 id="对象的动态特性"><a href="#对象的动态特性" class="headerlink" title="对象的动态特性"></a>对象的动态特性</h3><pre><code>对象在创建出来之后，可以随时的新增成员（方法和属性），这就是对象的动态特性
-</code></pre><h3 id="最后作为开发人员需要知道的基本的调试工具的使用"><a href="#最后作为开发人员需要知道的基本的调试工具的使用" class="headerlink" title="最后作为开发人员需要知道的基本的调试工具的使用"></a>最后作为开发人员需要知道的基本的调试工具的使用</h3><pre><code>* 普通断点
-* 条件断点
+      		<h1 id="高级-JavaScript-一"><a href="#高级-JavaScript-一" class="headerlink" title="高级 JavaScript (一)"></a>高级 JavaScript (一)</h1><h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><h3 id="词法作用域的概念"><a href="#词法作用域的概念" class="headerlink" title="词法作用域的概念"></a>词法作用域的概念</h3><pre><code>变量的作用域在代码写好的时候就已经可以确定，这种作用域就是词法作用域
+</code></pre><ul>
+<li>JavaScript中没有动态作用域</li>
+<li>JavaScript中没有块级作用域</li>
+</ul>
+<h2 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h2><pre><code>JS代码执行分两个阶段，首先进行预解析，再执行
 
- Elements  审查元素 做css
-* Console  跟页面在同一个js的运行环境中，可以写任何的js代码，也可以用js操作页面元素
-* Sources  所有的资源文件都在这里，最重要的就是可以在这里对js代码进行断点调试
-</code></pre><h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>&#123;</div><div class="line">    <span class="comment">//可能出现异常的代码</span></div><div class="line">&#125;<span class="keyword">catch</span>(e)&#123;</div><div class="line">    <span class="comment">//e 异常对象，异常信息</span></div><div class="line">    <span class="comment">//捕获异常后的处理代码</span></div><div class="line">&#125;<span class="keyword">finally</span>&#123;</div><div class="line">    <span class="comment">//不论是否发生异常，都会执行的代码</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="面向对象简单介绍"><a href="#面向对象简单介绍" class="headerlink" title="面向对象简单介绍"></a>面向对象简单介绍</h2><h3 id="面向对象的基本概念"><a href="#面向对象的基本概念" class="headerlink" title="面向对象的基本概念"></a>面向对象的基本概念</h3><pre><code>面向对象是一种思维方式，他是将解决问题的关注点放到了解决问题所需要的一些列对象身上
-</code></pre><h3 id="面向过程的基本概念"><a href="#面向过程的基本概念" class="headerlink" title="面向过程的基本概念"></a>面向过程的基本概念</h3><pre><code>面向过程是一种思维方式，他是将解决问题的关注点放到了解决问题的每一个详细的步骤上
-</code></pre><h3 id="面向对象就是对面向过程的封装"><a href="#面向对象就是对面向过程的封装" class="headerlink" title="面向对象就是对面向过程的封装"></a>面向对象就是对面向过程的封装</h3><p><img src="" alt=""></p>
-
+在预解析阶段，系统会将所有的变量声明以及函数声明提升到当前作用域的最顶上
+</code></pre><ul>
+<li>当函数同名的时候，都会提升，但是后面的函数会将前面的函数覆盖</li>
+<li>当函数和变量同名的时候，只会提升函数声明，变量声明会被忽略</li>
+<li>变量提升是分作用域的</li>
+<li>变量提升是分段（script标签）</li>
+<li>函数表达式是不会被提升,提升的只是变量的声明。  var func= function(){};</li>
+<li>条件式函数声明，根据浏览器不同，提升的情况不同，最新的浏览器中都不会进行提升</li>
+</ul>
+<h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><pre><code>在js中只有函数可以限定作用域，然后，函数中又可以声明函数，这样就形成了一个由内向外进行访问的链式结构，这个结构就叫做作用域链
+</code></pre><h3 id="如何绘制作用域链"><a href="#如何绘制作用域链" class="headerlink" title="如何绘制作用域链"></a>如何绘制作用域链</h3><ol>
+<li>先画一条直线，表示0级作用域链，也就是全局作用域</li>
+<li>再在全局作用域中查找变量以及函数的声明，将所有找到的这些成员以小方块的形式放在0级作用域链上</li>
+<li>如果全局作用域中有函数成员，那就从该函数中在引出一条线，表示1级作用域链</li>
+<li>再去1级作用域中进行查找变量以及函数的声明，在把他们画出来，<br>5、如果还有函数，就接着去找。。。。直到没有函数为止</li>
+</ol>
+<h3 id="变量的搜索原则"><a href="#变量的搜索原则" class="headerlink" title="变量的搜索原则"></a>变量的搜索原则</h3><p>1、首先在当前作用域中进行查找，如果找到了就直接使用<br>2、如果没有找到，就去上一级作用域中进行查找，如果找到了就直接使用<br>3、如果没有找到，就继续往上查找，直到找到全局作用域为止</p>
+<h3 id="如何分析面试题"><a href="#如何分析面试题" class="headerlink" title="如何分析面试题"></a>如何分析面试题</h3><ol>
+<li>先进行提升处理（把提升后的代码写出来）</li>
+<li>然后根据作用域及作用域链还有变量搜索原则进行分析</li>
+</ol>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><ul>
+<li>语文解释：封闭的包裹结构</li>
+<li>js的解释：函数就是一个闭包</li>
+</ul>
+<h3 id="闭包要解决的问题是什么？"><a href="#闭包要解决的问题是什么？" class="headerlink" title="闭包要解决的问题是什么？"></a>闭包要解决的问题是什么？</h3><p>函数内部的数据无法被外界直接访问！</p>
+<h3 id="如何解决？"><a href="#如何解决？" class="headerlink" title="如何解决？"></a>如何解决？</h3><p>在函数内部返回一个函数，用来操作该函数内部的数据。</p>
+<h3 id="闭包的原理（作用域）"><a href="#闭包的原理（作用域）" class="headerlink" title="闭包的原理（作用域）"></a>闭包的原理（作用域）</h3><p>函数中的变量无法被上一级作用域访问，但是可以被下一级作用域访问。</p>
+<h3 id="闭包的基本模型"><a href="#闭包的基本模型" class="headerlink" title="闭包的基本模型"></a>闭包的基本模型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> name = <span class="string">""</span>;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> name;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="如何访问多个数据？"><a href="#如何访问多个数据？" class="headerlink" title="如何访问多个数据？"></a>如何访问多个数据？</h3><p>返回一个对象，对象中包含对所有数据的设置和访问的方法，在函数外部接收到该对象之后，就可以操作函数内部的数据</p>
+<h3 id="点击事件的注册问题"><a href="#点击事件的注册问题" class="headerlink" title="点击事件的注册问题"></a>点击事件的注册问题</h3><p>如果在for循环中使用循环的控制变量i来处理点击事件中的内容，那么这个i在点击事件触发的时候，循环已经结束，i已经变成了最后一个值，所以会不准去</p>
+<h4 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h4><p>在点击事件的处理函数内部，访问的时候，不要去使用i，而是使用这个函数自己的一个私有的数据。<br>所以需要使用一个拥有自己的变量的函数来做点击事件的处理函数。</p>
+<p>这个函数需要通过闭包来创建。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">j</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(j);  <span class="comment">//这里的j就是只有这个函数可以访问的一个私有的变量</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的函数调用之后的返回值，就拥有了自己独立的变量，我们可以使用它来做点击事件的处理函数</p>
+<h3 id="setTimeout的回调函数执行时间问题"><a href="#setTimeout的回调函数执行时间问题" class="headerlink" title="setTimeout的回调函数执行时间问题"></a>setTimeout的回调函数执行时间问题</h3><p>setTimeout和setInterval中的回调函数，会在所有的主逻辑代码执行完之后，才依次检查执行时间是不是到了，到了就会执行</p>
+<p>当把setTimeout放在一个for循环语句中的时候，如果在回调函数中使用了循环中变量i<br>那么，当setTimeout的回调函数执行的时候，for循环已经执行完毕，i已经是最后一个值</p>
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>回调函数不应该去使用for循环中的i，而是使用自己的一个私有变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">j</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> fucntion()&#123;</div><div class="line">        <span class="built_in">console</span>.log(j)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">setTimeout(f(i),<span class="number">0</span>);</div></pre></td></tr></table></figure>
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2016/12/03/面向对象（二）/" style="float: left;">
-        ← 
+    <a class="pull-left" href="/2016/10/28/高级JavaScript（二）/" style="float: left;">
+        ← 高级 JavaScript (二)
     </a>
     
     
-    <a class="pull-right" href="/2016/12/02/hello-world/">
-        Hello World →
+    <a class="pull-right" href="/2016/10/15/面向对象（三）/">
+        面向对象（三） →
     </a>
     
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016/12/03/面向对象（一）/" data-title="" data-url="http://yoursite.com/2016/12/03/面向对象（一）/"></div>
+<div class="ds-thread" data-thread-key="2016/10/27/高级JavaScript（一）/" data-title="高级 JavaScript (一)" data-url="http://azraa.top/2016/10/27/高级JavaScript（一）/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"duoshuo_name"};
 (function() {

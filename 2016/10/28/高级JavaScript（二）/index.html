@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>高级 JavaScript (二) | 梦唉</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="梦唉">
+    <meta name="author" content="Azraa">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="梦唉" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/H5的概念与新增标签/" class="animsition-link">H5的概念与新增标签<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Me/" class="animsition-link">Me<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/高级JavaScript/" class="animsition-link">高级JavaScript<small>(6)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">梦唉</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-10-27T16:00:00.000Z" itemprop="datePublished">
+          2016-10-28
+      </time>
+    
+</span>
+                <h1>高级 JavaScript (二)</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="高级-JavaScript-（二）"><a href="#高级-JavaScript-（二）" class="headerlink" title="高级 JavaScript （二）"></a>高级 JavaScript （二）</h1><h2 id="闭包的练习"><a href="#闭包的练习" class="headerlink" title="闭包的练习"></a>闭包的练习</h2><h3 id="for循环中注册点击事件"><a href="#for循环中注册点击事件" class="headerlink" title="for循环中注册点击事件"></a>for循环中注册点击事件</h3><h3 id="for循环中是用setTimeout"><a href="#for循环中是用setTimeout" class="headerlink" title="for循环中是用setTimeout"></a>for循环中是用setTimeout</h3><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>缓存就是将一些数据，资源，进行临时的存储，以提高访问效率</p>
+<p>浏览器缓存<br>CDN<br>JS中的缓存</p>
+<h2 id="使用缓存解决斐波那契数列的性能问题"><a href="#使用缓存解决斐波那契数列的性能问题" class="headerlink" title="使用缓存解决斐波那契数列的性能问题"></a>使用缓存解决斐波那契数列的性能问题</h2><h3 id="有什么性能问题"><a href="#有什么性能问题" class="headerlink" title="有什么性能问题"></a>有什么性能问题</h3><p>使用递归去计算斐波那契数列存在大量的重复的计算，导致计算效率十分低下</p>
+<h3 id="如何解决性能问题"><a href="#如何解决性能问题" class="headerlink" title="如何解决性能问题"></a>如何解决性能问题</h3><p>使用缓存<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1.创建一个数组充当缓存容器</span></div><div class="line"><span class="keyword">var</span> arr = [];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibnacci</span>(<span class="params">n</span>)</span>&#123;</div><div class="line"><span class="comment">//2.每次需要计算斐波那契数字的时候，先去缓存中进行查找</span></div><div class="line">    <span class="keyword">var</span> num = arr[n];</div><div class="line">    <span class="keyword">if</span>(num)&#123;</div><div class="line">         <span class="comment">//3.如果有就直接返回</span></div><div class="line">        <span class="keyword">return</span> num;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="comment">//4.如果没有，就去就算，算出来结果之后，</span></div><div class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">2</span>)&#123;</div><div class="line">            num = <span class="number">1</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            num = fibnacci(n<span class="number">-1</span>)+fibnacci(n<span class="number">-2</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//5.将结果存入缓存中</span></div><div class="line">        arr[n] = num;</div><div class="line">        <span class="comment">//6.将结果返回</span></div><div class="line">        <span class="keyword">return</span> num;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFib</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//1.创建一个数组充当缓存容器</span></div><div class="line">    <span class="keyword">var</span> arr = [];</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fibnacci</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">    <span class="comment">//2.每次需要计算斐波那契数字的时候，先去缓存中进行查找</span></div><div class="line">        <span class="keyword">var</span> num = arr[n];</div><div class="line">        <span class="keyword">if</span>(!num)&#123;</div><div class="line">            <span class="comment">//4.如果没有，就去就算，算出来结果之后，</span></div><div class="line">            <span class="keyword">if</span>(n &lt;= <span class="number">2</span>)&#123;</div><div class="line">                num = <span class="number">1</span>;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                num = fibnacci(n<span class="number">-1</span>)+fibnacci(n<span class="number">-2</span>);</div><div class="line">            &#125;</div><div class="line">            <span class="comment">//5.将结果存入缓存中</span></div><div class="line">            arr[n] = num;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//6.将结果返回</span></div><div class="line">        <span class="keyword">return</span> num;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fibnacci;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="jQuery缓存实现分析"><a href="#jQuery缓存实现分析" class="headerlink" title="jQuery缓存实现分析"></a>jQuery缓存实现分析</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createCache</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//需要一个能够存储数据的容器</span></div><div class="line">    <span class="keyword">var</span> cache = &#123;&#125;;</div><div class="line"></div><div class="line">    <span class="comment">//用存储键，并且记录键存入的顺序</span></div><div class="line">    <span class="keyword">var</span> keys = [];</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">key, value</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(value)&#123;</div><div class="line">            cache[key] = value;</div><div class="line">            keys.push(key);</div><div class="line"></div><div class="line">            <span class="keyword">if</span>(keys.length &gt; <span class="number">50</span>)&#123;</div><div class="line">                <span class="keyword">delete</span> cache[keys.shift()];</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> cache[key];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="jQuery缓存源码分析"><a href="#jQuery缓存源码分析" class="headerlink" title="jQuery缓存源码分析"></a>jQuery缓存源码分析</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createCache</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> keys = [];</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">cache</span>(<span class="params">key, value</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(keys.push(key + <span class="string">" "</span>) &gt; <span class="number">10</span>)&#123;</div><div class="line">            <span class="keyword">delete</span> cache[keys.shift()];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> (cache[key + <span class="string">" "</span>] = value);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> cache;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> cache = createCache();</div><div class="line">cache(<span class="string">"name"</span>,<span class="string">"Li2Dog"</span>);</div><div class="line">cache[<span class="string">"name"</span> + <span class="string">" "</span>];</div></pre></td></tr></table></figure>
+<h2 id="函数的四种调用模式"><a href="#函数的四种调用模式" class="headerlink" title="函数的四种调用模式"></a>函数的四种调用模式</h2><h3 id="函数调用模式"><a href="#函数调用模式" class="headerlink" title="函数调用模式"></a>函数调用模式</h3><p>形式：函数名();<br>this:window</p>
+<h3 id="方法调用模式"><a href="#方法调用模式" class="headerlink" title="方法调用模式"></a>方法调用模式</h3><p>形式：对象名.方法名();<br>this: 调用该方法的对象</p>
+<h3 id="构造函数调用模式"><a href="#构造函数调用模式" class="headerlink" title="构造函数调用模式"></a>构造函数调用模式</h3><p>形式：new 函数名()<br>this: new创建出来的对象</p>
+<h4 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">    o.name = <span class="string">"zs"</span>;</div><div class="line">    o.age = <span class="number">18</span>;</div><div class="line">    <span class="keyword">return</span> o;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p = createPerson();</div></pre></td></tr></table></figure>
+<h4 id="寄生模式"><a href="#寄生模式" class="headerlink" title="寄生模式"></a>寄生模式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">    o.name = <span class="string">"zs"</span>;</div><div class="line">    o.age = <span class="number">18</span>;</div><div class="line">    <span class="keyword">return</span> o;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div></pre></td></tr></table></figure>
+<h3 id="上下文调用模式"><a href="#上下文调用模式" class="headerlink" title="上下文调用模式"></a>上下文调用模式</h3><p>在其他的调用模式中，this不可以赋值，也就不能改变<br>在上下文调用模式中，可以进行手动的设置this的值。</p>
+<h4 id="call"><a href="#call" class="headerlink" title="call"></a>call</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">函数名.call(对象, 参数<span class="number">1</span>, 参数<span class="number">2</span>, 参数<span class="number">3.</span>..)</div></pre></td></tr></table></figure>
+<ol>
+<li>调用函数</li>
+<li>将函数内的this指向第一个参数中的对象</li>
+<li><p>将除第一个参数外的所有参数依次传给函数，做为实参</p>
+<h4 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">函数名.apply(对象, 数组)</div></pre></td></tr></table></figure>
+</li>
+<li><p>调用函数</p>
+</li>
+<li>将函数内的this指向第一个参数中的对象</li>
+<li>将第二个参数中的数组拆解开，将数组中的元素依次的传给函数当做实参</li>
+</ol>
+<h4 id="借用构造函数继承"><a href="#借用构造函数继承" class="headerlink" title="借用构造函数继承"></a>借用构造函数继承</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.money = <span class="number">100000000000000</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    Parent.call(<span class="keyword">this</span>);</div><div class="line">    <span class="keyword">this</span>.wife = <span class="string">"凤姐"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> Son();</div></pre></td></tr></table></figure>
+<ol>
+<li>使用new关键字创建了一个对象</li>
+<li>调用构造函数Son，将Son中的this指向刚才创建的对象</li>
+<li>在Son构造函数中，是用上下文调用模式去调用Parent函数，</li>
+<li>调用Person函数，将Parent中的this指向song中的this，也就是用new创建出来的那个对象</li>
+<li>Parent中会使用this给对象添加成员</li>
+<li>Parent调用结束，Son中的this也就有了Parent中添加的那些个成员</li>
+</ol>
+<p>将伪数组转换成数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fakeArr = &#123;</div><div class="line">    <span class="number">0</span>:<span class="string">"a"</span>,</div><div class="line">    <span class="number">1</span>:<span class="string">"b"</span>,</div><div class="line">    <span class="number">2</span>:<span class="string">"c"</span>,</div><div class="line">    <span class="attr">length</span>:<span class="number">3</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr = [];</div><div class="line"></div><div class="line"><span class="built_in">Array</span>.prototype.push.apply(arr, fakeArr);</div><div class="line"><span class="built_in">Array</span>.prototype.concat.apply(arr, fakeArr);</div><div class="line"></div><div class="line"></div><div class="line">arr.concat.apply(arr, fakeArr);</div></pre></td></tr></table></figure></p>
+<p>求数组的最大值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span> ,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">34</span>,<span class="number">3</span>,<span class="number">43</span>,<span class="number">43</span>,<span class="number">43</span>,<span class="number">4</span>,<span class="number">34</span>,<span class="number">3</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, arr);</div><div class="line"><span class="comment">//Math.max(1,2,3,43,4,3,43,43,43)</span></div></pre></td></tr></table></figure></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/12/03/Something about me/" style="float: left;">
+        ← Something about me
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/10/27/高级JavaScript（一）/">
+        高级 JavaScript (一) →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/10/28/高级JavaScript（二）/" data-title="高级 JavaScript (二)" data-url="http://azraa.top/2016/10/28/高级JavaScript（二）/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Azraa. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
