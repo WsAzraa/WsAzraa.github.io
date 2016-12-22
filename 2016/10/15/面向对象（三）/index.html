@@ -33,7 +33,7 @@
     <link rel="alternate" href="/atom.xml" title="梦唉" type="application/atom+xml">
     <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
 	
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    <link rel="stylesheet" href="/highlightjs/sunburst.css" type="text/css">
     
     
 
@@ -234,17 +234,26 @@
 2.如果没有，就去原型中查找，如果找到了就直接使用
 3.如果没有找到，就去原型的原型中查找，以此往复，直到找到null
 </code></pre><h3 id="Array-prototype-是一个空数组"><a href="#Array-prototype-是一个空数组" class="headerlink" title="Array.prototype 是一个空数组"></a>Array.prototype 是一个空数组</h3><p>//arr—-&gt;Array.prototype—–&gt;Object.Prototype—–&gt;null<br>var arr = [];</p>
-<h2 id="instanceof-关键字"><a href="#instanceof-关键字" class="headerlink" title="instanceof 关键字"></a>instanceof 关键字</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">对象  <span class="keyword">instanceof</span> 构造函数</div><div class="line"><span class="comment">//返回值为boolean类型</span></div><div class="line"><span class="comment">//功能： 判断构造函数的原型是不是在该对象的原型链上</span></div></pre></td></tr></table></figure>
+<h2 id="instanceof-关键字"><a href="#instanceof-关键字" class="headerlink" title="instanceof 关键字"></a>instanceof 关键字</h2><pre><code class="js">对象  instanceof 构造函数
+//返回值为boolean类型
+//功能： 判断构造函数的原型是不是在该对象的原型链上
+</code></pre>
 <h2 id="Object-prototype的成员"><a href="#Object-prototype的成员" class="headerlink" title="Object.prototype的成员"></a>Object.prototype的成员</h2><ul>
 <li>constructor 原型中的属性指向和原型相关的构造函数</li>
-<li><p>hasOwnProperty</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">对象.hasOwnProperty(属性名)</div><div class="line"><span class="comment">//返回值为boolean类型</span></div><div class="line"><span class="comment">//功能：判断属性是否存在对象本身中</span></div></pre></td></tr></table></figure>
+<li>hasOwnProperty<pre><code class="js">对象.hasOwnProperty(属性名)
+//返回值为boolean类型
+//功能：判断属性是否存在对象本身中
+</code></pre>
 </li>
-<li><p>isPrototypeOf</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">对象.isPrototypeof(对象<span class="number">1</span>)</div><div class="line"><span class="comment">//返回值为boolean</span></div><div class="line"><span class="comment">//功能：判断对象是否是对象1的原型对象</span></div></pre></td></tr></table></figure>
+<li>isPrototypeOf<pre><code class="js">对象.isPrototypeof(对象1)
+//返回值为boolean
+//功能：判断对象是否是对象1的原型对象
+</code></pre>
 </li>
-<li><p>propertyIsEnumerable</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">对象.propertyIsEnumberable(属性名)</div><div class="line"><span class="comment">//返回值为boolean</span></div><div class="line"><span class="comment">//功能：判断属性是否属于对象本身并且能够被遍历（for-in）</span></div></pre></td></tr></table></figure>
+<li>propertyIsEnumerable<pre><code class="js">对象.propertyIsEnumberable(属性名)
+//返回值为boolean
+//功能：判断属性是否属于对象本身并且能够被遍历（for-in）
+</code></pre>
 </li>
 <li><p>toString toLocaleString<br>  都是将对象转换成字符串类型<br>  toLocaleString会将字符串转换成本地格式的字符串， 本地格式为系统设置</p>
 </li>

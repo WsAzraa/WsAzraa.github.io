@@ -33,7 +33,7 @@
     <link rel="alternate" href="/atom.xml" title="梦唉" type="application/atom+xml">
     <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
 	
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    <link rel="stylesheet" href="/highlightjs/sunburst.css" type="text/css">
     
     
 
@@ -260,11 +260,23 @@ JavaScript中的对象就是无序键值对儿的集合
 </blockquote>
 <p>一个对象没有某些属性和方法，另外一个对象有，拿过来用，就是继承</p>
 <h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>JS中没有多态<br>父类指针指向子类对象</p>
-<h2 id="创建对象的方式"><a href="#创建对象的方式" class="headerlink" title="创建对象的方式"></a>创建对象的方式</h2><h3 id="字面量方式"><a href="#字面量方式" class="headerlink" title="字面量方式"></a>字面量方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">key</span>:value,</div><div class="line">    <span class="attr">key</span>:value,</div><div class="line">    <span class="attr">key</span>:value</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="创建对象的方式"><a href="#创建对象的方式" class="headerlink" title="创建对象的方式"></a>创建对象的方式</h2><h3 id="字面量方式"><a href="#字面量方式" class="headerlink" title="字面量方式"></a>字面量方式</h3><pre><code class="js">var obj = {
+    key:value,
+    key:value,
+    key:value
+};
+</code></pre>
 <p>通过字面量创建对象，每次创建的对象都只能当次使用，下次如果还要使用，就得再写一次，复用性差。</p>
-<h3 id="内置构造函数"><a href="#内置构造函数" class="headerlink" title="内置构造函数"></a>内置构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div></pre></td></tr></table></figure>
+<h3 id="内置构造函数"><a href="#内置构造函数" class="headerlink" title="内置构造函数"></a>内置构造函数</h3><pre><code class="js">var obj = new Object();
+</code></pre>
 <p>每次创建的对象都是空的对象，都得去手动的添加成员，所以也有复用性问题</p>
-<h3 id="自定义构造函数"><a href="#自定义构造函数" class="headerlink" title="自定义构造函数"></a>自定义构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = <span class="string">"li2Dog"</span>;</div><div class="line">    <span class="keyword">this</span>.age = <span class="number">18</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div></pre></td></tr></table></figure>
+<h3 id="自定义构造函数"><a href="#自定义构造函数" class="headerlink" title="自定义构造函数"></a>自定义构造函数</h3><pre><code class="js">function Person(){
+    this.name = &quot;li2Dog&quot;;
+    this.age = 18;
+}
+
+var p = new Person();
+</code></pre>
 <h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><h3 id="构造函数的概念"><a href="#构造函数的概念" class="headerlink" title="构造函数的概念"></a>构造函数的概念</h3><pre><code>构造函数也是一个函数，和普通函数不同的地方在于，构造函数是用来初始化对象的。
 </code></pre><h3 id="构造函数的特征"><a href="#构造函数的特征" class="headerlink" title="构造函数的特征"></a>构造函数的特征</h3><ul>
 <li>首字母大写</li>
@@ -288,7 +300,9 @@ JavaScript中的对象就是无序键值对儿的集合
 </ul>
 <h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><h3 id="原型的概念"><a href="#原型的概念" class="headerlink" title="原型的概念"></a>原型的概念</h3><p>构造函数在创建出来的时候，系统会默认的给构造函数创建并关联一个空的对象，这个对象就是原型</p>
 <h3 id="原型的作用"><a href="#原型的作用" class="headerlink" title="原型的作用"></a>原型的作用</h3><p>原型中的成员可以被何其关联的构造函数所创建出来的所有的对象共享</p>
-<h3 id="原型的访问形式"><a href="#原型的访问形式" class="headerlink" title="原型的访问形式"></a>原型的访问形式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">构造函数.prototype</div><div class="line">对象.__proto__   非标准属性，有兼容性问题</div></pre></td></tr></table></figure>
+<h3 id="原型的访问形式"><a href="#原型的访问形式" class="headerlink" title="原型的访问形式"></a>原型的访问形式</h3><pre><code class="js">构造函数.prototype
+对象.__proto__   非标准属性，有兼容性问题
+</code></pre>
 <h3 id="原型的使用方式"><a href="#原型的使用方式" class="headerlink" title="原型的使用方式"></a>原型的使用方式</h3><ul>
 <li>利用动态特性为原型对象添加属性和方法</li>
 <li>直接替换原型对象</li>
@@ -299,19 +313,60 @@ JavaScript中的对象就是无序键值对儿的集合
 <li>在设置属性的时候，不需要遵守属性搜索原则</li>
 <li>在替换原型对象的时候，替换之前创建的对象的原型和替换之后创建的对象的原型不一致</li>
 </ol>
-<h2 id="继承-1"><a href="#继承-1" class="headerlink" title="继承"></a>继承</h2><h3 id="混入式继承（mix-in）"><a href="#混入式继承（mix-in）" class="headerlink" title="混入式继承（mix-in）"></a>混入式继承（mix-in）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> obj1 = &#123;</div><div class="line">    <span class="attr">name</span>:<span class="string">"周三"</span>,</div><div class="line">    <span class="attr">age</span>:<span class="number">18</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> obj1)&#123;</div><div class="line">    obj[k] = obj1[k];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h3><p>1.使用混入的方式给原型对象添加属性和方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> parentObj = &#123;</div><div class="line">    <span class="attr">name</span> : <span class="string">"周天儿"</span>,</div><div class="line">    <span class="attr">age</span> : <span class="number">7</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> parentObj)&#123;</div><div class="line">    Person.prototype[k] = parentObj[k];</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div></pre></td></tr></table></figure></p>
+<h2 id="继承-1"><a href="#继承-1" class="headerlink" title="继承"></a>继承</h2><h3 id="混入式继承（mix-in）"><a href="#混入式继承（mix-in）" class="headerlink" title="混入式继承（mix-in）"></a>混入式继承（mix-in）</h3><pre><code class="js">var obj = {};
+var obj1 = {
+    name:&quot;周三&quot;,
+    age:18
+};
+for(var k in obj1){
+    obj[k] = obj1[k];
+}
+</code></pre>
+<h3 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h3><p>1.使用混入的方式给原型对象添加属性和方法</p>
+<pre><code class="js">function Person(){}
+var parentObj = {
+    name : &quot;周天儿&quot;,
+    age : 7
+};
+for(var k in parentObj){
+    Person.prototype[k] = parentObj[k];
+}
+var p = new Person();
+</code></pre>
 <ol>
-<li><p>直接修改原型对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line">Person.prototype.name = <span class="string">""</span>;</div><div class="line">Person.prototype.age = <span class="number">18</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div></pre></td></tr></table></figure>
-</li>
-<li><p>替换原型对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line">Person.prototype = &#123;</div><div class="line">    <span class="attr">name</span> : <span class="string">"周天儿"</span>,</div><div class="line">    <span class="attr">age</span> : <span class="number">7</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div></pre></td></tr></table></figure>
-</li>
+<li>直接修改原型对象<br>```js<br>function Person(){}</li>
 </ol>
-<h3 id="经典继承"><a href="#经典继承" class="headerlink" title="经典继承"></a>经典继承</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> parentObj = &#123;</div><div class="line">    <span class="attr">name</span> : <span class="string">"周天儿"</span>,</div><div class="line">    <span class="attr">age</span> : <span class="number">7</span></div><div class="line">&#125;;</div><div class="line"><span class="comment">//创建一个继承自parentObj的对象obj</span></div><div class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>.create(parentObj);</div></pre></td></tr></table></figure>
+<p>Person.prototype.name = “”;<br>Person.prototype.age = 18;</p>
+<p>var p = new Person();</p>
+<pre><code>3. 替换原型对象
+```js
+function Person(){}
+
+Person.prototype = {
+    name : &quot;周天儿&quot;,
+    age : 7
+};
+
+var p = new Person();
+</code></pre><h3 id="经典继承"><a href="#经典继承" class="headerlink" title="经典继承"></a>经典继承</h3><pre><code class="js">var parentObj = {
+    name : &quot;周天儿&quot;,
+    age : 7
+};
+//创建一个继承自parentObj的对象obj
+var obj = Object.create(parentObj);
+</code></pre>
 <p>原理：原型继承</p>
-<p>兼容性问题解决(内置对象不可以随便修改)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myCreate</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">Object</span>.create)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.create(obj);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">        F.prototype = obj;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> F();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>兼容性问题解决(内置对象不可以随便修改)</p>
+<pre><code class="js">function myCreate(obj){
+    if(Object.create){
+        return Object.create(obj);
+    }else{
+        function F(){}
+        F.prototype = obj;
+        return new F();
+    }
+}
+</code></pre>
 <h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>每一个对象都有原型，每一个原型都是对象，每一个原型也都有原型，就形成了链式结构，称为原型链</p>
 <ol>
 <li>首先画构造函数</li>
@@ -364,7 +419,14 @@ JavaScript中的对象就是无序键值对儿的集合
 </tr>
 </tbody>
 </table>
-<h2 id="Function-eval"><a href="#Function-eval" class="headerlink" title="Function eval"></a>Function eval</h2><h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><p>可以使用Function来创建函数，他可以将字符串转换成代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//如果不传参数，则创建出来的是空函数</span></div><div class="line"><span class="keyword">var</span> func = <span class="keyword">new</span> <span class="built_in">Function</span>();</div><div class="line"><span class="comment">//如果传一个参数，则这个参数为函数体</span></div><div class="line"><span class="keyword">var</span> func1 = <span class="keyword">new</span> <span class="built_in">Function</span>(methodBody);</div><div class="line"><span class="comment">//如果传多个参数，则最后一个参数为函数体，之前所有参数为函数的形参名</span></div><div class="line"><span class="keyword">var</span> func2 = <span class="keyword">new</span> <span class="built_in">Function</span>(arg1, arg2, arg3, arg4, argN, methodBody);</div></pre></td></tr></table></figure></p>
+<h2 id="Function-eval"><a href="#Function-eval" class="headerlink" title="Function eval"></a>Function eval</h2><h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><p>可以使用Function来创建函数，他可以将字符串转换成代码</p>
+<pre><code class="js">//如果不传参数，则创建出来的是空函数
+var func = new Function();
+//如果传一个参数，则这个参数为函数体
+var func1 = new Function(methodBody);
+//如果传多个参数，则最后一个参数为函数体，之前所有参数为函数的形参名
+var func2 = new Function(arg1, arg2, arg3, arg4, argN, methodBody);
+</code></pre>
 <h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><p>可以将字符串转换成代码并且运行</p>
 <p>当使用<code>eval</code>处理JSON格式字符串的时候，会将JSON字符串内的<code>{}</code>当做代码段来处理，会报错</p>
 <p>解决方案：</p>

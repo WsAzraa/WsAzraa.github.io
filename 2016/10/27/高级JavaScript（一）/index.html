@@ -33,7 +33,7 @@
     <link rel="alternate" href="/atom.xml" title="梦唉" type="application/atom+xml">
     <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
 	
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    <link rel="stylesheet" href="/highlightjs/sunburst.css" type="text/css">
     
     
 
@@ -262,16 +262,35 @@
 <h3 id="闭包要解决的问题是什么？"><a href="#闭包要解决的问题是什么？" class="headerlink" title="闭包要解决的问题是什么？"></a>闭包要解决的问题是什么？</h3><p>函数内部的数据无法被外界直接访问！</p>
 <h3 id="如何解决？"><a href="#如何解决？" class="headerlink" title="如何解决？"></a>如何解决？</h3><p>在函数内部返回一个函数，用来操作该函数内部的数据。</p>
 <h3 id="闭包的原理（作用域）"><a href="#闭包的原理（作用域）" class="headerlink" title="闭包的原理（作用域）"></a>闭包的原理（作用域）</h3><p>函数中的变量无法被上一级作用域访问，但是可以被下一级作用域访问。</p>
-<h3 id="闭包的基本模型"><a href="#闭包的基本模型" class="headerlink" title="闭包的基本模型"></a>闭包的基本模型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> name = <span class="string">""</span>;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> name;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="闭包的基本模型"><a href="#闭包的基本模型" class="headerlink" title="闭包的基本模型"></a>闭包的基本模型</h3><pre><code class="js">function func(){
+    var name = &quot;&quot;;
+    return function(){
+        return name;
+    }
+}
+</code></pre>
 <h3 id="如何访问多个数据？"><a href="#如何访问多个数据？" class="headerlink" title="如何访问多个数据？"></a>如何访问多个数据？</h3><p>返回一个对象，对象中包含对所有数据的设置和访问的方法，在函数外部接收到该对象之后，就可以操作函数内部的数据</p>
 <h3 id="点击事件的注册问题"><a href="#点击事件的注册问题" class="headerlink" title="点击事件的注册问题"></a>点击事件的注册问题</h3><p>如果在for循环中使用循环的控制变量i来处理点击事件中的内容，那么这个i在点击事件触发的时候，循环已经结束，i已经变成了最后一个值，所以会不准去</p>
 <h4 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h4><p>在点击事件的处理函数内部，访问的时候，不要去使用i，而是使用这个函数自己的一个私有的数据。<br>所以需要使用一个拥有自己的变量的函数来做点击事件的处理函数。</p>
-<p>这个函数需要通过闭包来创建。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">j</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(j);  <span class="comment">//这里的j就是只有这个函数可以访问的一个私有的变量</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这个函数需要通过闭包来创建。</p>
+<pre><code class="js">function f1(j){
+    return function(){
+        console.log(j);  //这里的j就是只有这个函数可以访问的一个私有的变量
+    }
+}
+</code></pre>
 <p>上面的函数调用之后的返回值，就拥有了自己独立的变量，我们可以使用它来做点击事件的处理函数</p>
 <h3 id="setTimeout的回调函数执行时间问题"><a href="#setTimeout的回调函数执行时间问题" class="headerlink" title="setTimeout的回调函数执行时间问题"></a>setTimeout的回调函数执行时间问题</h3><p>setTimeout和setInterval中的回调函数，会在所有的主逻辑代码执行完之后，才依次检查执行时间是不是到了，到了就会执行</p>
 <p>当把setTimeout放在一个for循环语句中的时候，如果在回调函数中使用了循环中变量i<br>那么，当setTimeout的回调函数执行的时候，for循环已经执行完毕，i已经是最后一个值</p>
 <h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>回调函数不应该去使用for循环中的i，而是使用自己的一个私有变量</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">j</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> fucntion()&#123;</div><div class="line">        <span class="built_in">console</span>.log(j)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">setTimeout(f(i),<span class="number">0</span>);</div></pre></td></tr></table></figure>
+<pre><code class="js">function f(j){
+    return fucntion(){
+        console.log(j)
+    }
+}
+setTimeout(f(i),0);
+</code></pre>
+
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
