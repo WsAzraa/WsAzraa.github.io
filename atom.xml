@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://azraa.top/"/>
-  <updated>2017-04-23T12:24:12.000Z</updated>
+  <updated>2017-04-23T12:32:07.000Z</updated>
   <id>http://azraa.top/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://azraa.top/2017/04/23/Python/"/>
     <id>http://azraa.top/2017/04/23/Python/</id>
     <published>2017-04-22T16:00:00.000Z</published>
-    <updated>2017-04-23T12:24:12.000Z</updated>
+    <updated>2017-04-23T12:32:07.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="初学Python"><a href="#初学Python" class="headerlink" title="初学Python"></a>初学Python</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="最近由于项目需求需要去学习python这门语言，所以就自己在网上看了看廖雪峰大大的Python2-7教程-我个人觉得廖大大的教程看了之后还是很受益的。由于廖大写的已经跟详细了所以我就不一一赘述了这篇文章主要针对有开发经验的小伙伴们阅读使用。没接触过的小伙伴可以直接去看廖大的教程地址po给你们"><a href="#最近由于项目需求需要去学习python这门语言，所以就自己在网上看了看廖雪峰大大的Python2-7教程-我个人觉得廖大大的教程看了之后还是很受益的。由于廖大写的已经跟详细了所以我就不一一赘述了这篇文章主要针对有开发经验的小伙伴们阅读使用。没接触过的小伙伴可以直接去看廖大的教程地址po给你们" class="headerlink" title="最近由于项目需求需要去学习python这门语言，所以就自己在网上看了看廖雪峰大大的Python2.7教程 我个人觉得廖大大的教程看了之后还是很受益的。由于廖大写的已经跟详细了所以我就不一一赘述了这篇文章主要针对有开发经验的小伙伴们阅读使用。没接触过的小伙伴可以直接去看廖大的教程地址po给你们"></a>最近由于项目需求需要去学习python这门语言，所以就自己在网上看了看廖雪峰大大的Python2.7教程 我个人觉得廖大大的教程看了之后还是很受益的。由于廖大写的已经跟详细了所以我就不一一赘述了这篇文章主要针对有开发经验的小伙伴们阅读使用。没接触过的小伙伴可以直接去看廖大的教程地址po给你们</h3><p><a href="http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000" target="_blank" rel="external">Python 2.7教程</a></p>
 <hr>
@@ -134,7 +134,11 @@ else:
     print &#39;teenager&#39;
 </code></pre>
 </blockquote>
-<h3 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h3><h2 id="gt-空值是Python里一个特殊的值，用None表示。None不能理解为0，因为0是有意义的，而None是一个特殊的空值。"><a href="#gt-空值是Python里一个特殊的值，用None表示。None不能理解为0，因为0是有意义的，而None是一个特殊的空值。" class="headerlink" title="&gt;空值是Python里一个特殊的值，用None表示。None不能理解为0，因为0是有意义的，而None是一个特殊的空值。"></a>&gt;空值是Python里一个特殊的值，用<code>None</code>表示。<code>None</code>不能理解为<code>0</code>，因为<code>0</code>是有意义的，而<code>None</code>是一个特殊的空值。</h2><h2 id="list-和tuple"><a href="#list-和tuple" class="headerlink" title="list 和tuple"></a>list 和tuple</h2><h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><blockquote>
+<h3 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h3><blockquote>
+<p>空值是Python里一个特殊的值，用<code>None</code>表示。<code>None</code>不能理解为<code>0</code>，因为<code>0</code>是有意义的，而<code>None</code>是一个特殊的空值。</p>
+</blockquote>
+<hr>
+<h2 id="list-和tuple"><a href="#list-和tuple" class="headerlink" title="list 和tuple"></a>list 和tuple</h2><h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><blockquote>
 <p>Python内置的一种数据类型是列表：list。list是一种有序的集合，可以随时添加和删除其中的元素。比如：</p>
 <pre><code class="python">&gt;&gt;classmates=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;]
 &gt;&gt;classmates
