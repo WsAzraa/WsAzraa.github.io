@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>高级 JavaScript (二) | 梦唉</title>
+  <title>Archives: 2017 | 梦唉</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -86,7 +86,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -212,217 +212,69 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2016-10-27T16:00:00.000Z" itemprop="datePublished">
-          2016-10-28
-      </time>
-    
-</span>
-                <h1>高级 JavaScript (二)</h1>
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/aaa.jpg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>梦&nbsp &nbsp 唉</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p></p>
+                        
+
+                    </div>
+                </div>
             </div>
+            <!-- // .col-md-12 -->
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h1 id="高级-JavaScript-（二）"><a href="#高级-JavaScript-（二）" class="headerlink" title="高级 JavaScript （二）"></a>高级 JavaScript （二）</h1><h2 id="闭包的练习"><a href="#闭包的练习" class="headerlink" title="闭包的练习"></a>闭包的练习</h2><h3 id="for循环中注册点击事件"><a href="#for循环中注册点击事件" class="headerlink" title="for循环中注册点击事件"></a>for循环中注册点击事件</h3><h3 id="for循环中是用setTimeout"><a href="#for循环中是用setTimeout" class="headerlink" title="for循环中是用setTimeout"></a>for循环中是用setTimeout</h3><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>缓存就是将一些数据，资源，进行临时的存储，以提高访问效率</p>
-<p>浏览器缓存<br>CDN<br>JS中的缓存</p>
-<h2 id="使用缓存解决斐波那契数列的性能问题"><a href="#使用缓存解决斐波那契数列的性能问题" class="headerlink" title="使用缓存解决斐波那契数列的性能问题"></a>使用缓存解决斐波那契数列的性能问题</h2><h3 id="有什么性能问题"><a href="#有什么性能问题" class="headerlink" title="有什么性能问题"></a>有什么性能问题</h3><p>使用递归去计算斐波那契数列存在大量的重复的计算，导致计算效率十分低下</p>
-<h3 id="如何解决性能问题"><a href="#如何解决性能问题" class="headerlink" title="如何解决性能问题"></a>如何解决性能问题</h3><p>使用缓存</p>
-<pre><code class="js">//1.创建一个数组充当缓存容器
-var arr = [];
-
-function fibnacci(n){
-//2.每次需要计算斐波那契数字的时候，先去缓存中进行查找
-    var num = arr[n];
-    if(num){
-         //3.如果有就直接返回
-        return num;
-    }else{
-        //4.如果没有，就去就算，算出来结果之后，
-        if(n &lt;= 2){
-            num = 1;
-        }else{
-            num = fibnacci(n-1)+fibnacci(n-2);
-        }
-        //5.将结果存入缓存中
-        arr[n] = num;
-        //6.将结果返回
-        return num;
-    }
-
-}
-</code></pre>
-<pre><code class="js">function createFib(){
-    //1.创建一个数组充当缓存容器
-    var arr = [];
-    function fibnacci(n){
-    //2.每次需要计算斐波那契数字的时候，先去缓存中进行查找
-        var num = arr[n];
-        if(!num){
-            //4.如果没有，就去就算，算出来结果之后，
-            if(n &lt;= 2){
-                num = 1;
-            }else{
-                num = fibnacci(n-1)+fibnacci(n-2);
-            }
-            //5.将结果存入缓存中
-            arr[n] = num;
-        }
-        //6.将结果返回
-        return num;
-    }
-    return fibnacci;
-}
-</code></pre>
-<h2 id="jQuery缓存实现分析"><a href="#jQuery缓存实现分析" class="headerlink" title="jQuery缓存实现分析"></a>jQuery缓存实现分析</h2><pre><code class="js">function createCache(){
-    //需要一个能够存储数据的容器
-    var cache = {};
-
-    //用存储键，并且记录键存入的顺序
-    var keys = [];
-    return function(key, value){
-        if(value){
-            cache[key] = value;
-            keys.push(key);
-
-            if(keys.length &gt; 50){
-                delete cache[keys.shift()];
-            }
-
-        }else{
-            return cache[key];
-        }
-    }
-}
-</code></pre>
-<h2 id="jQuery缓存源码分析"><a href="#jQuery缓存源码分析" class="headerlink" title="jQuery缓存源码分析"></a>jQuery缓存源码分析</h2><pre><code class="js">function createCache(){
-    var keys = [];
-    function cache(key, value){
-        if(keys.push(key + &quot; &quot;) &gt; 10){
-            delete cache[keys.shift()];
-        }
-        return (cache[key + &quot; &quot;] = value);
-    }
-    return cache;
-}
-
-var cache = createCache();
-cache(&quot;name&quot;,&quot;Li2Dog&quot;);
-cache[&quot;name&quot; + &quot; &quot;];
-</code></pre>
-<h2 id="函数的四种调用模式"><a href="#函数的四种调用模式" class="headerlink" title="函数的四种调用模式"></a>函数的四种调用模式</h2><h3 id="函数调用模式"><a href="#函数调用模式" class="headerlink" title="函数调用模式"></a>函数调用模式</h3><p>形式：函数名();<br>this:window</p>
-<h3 id="方法调用模式"><a href="#方法调用模式" class="headerlink" title="方法调用模式"></a>方法调用模式</h3><p>形式：对象名.方法名();<br>this: 调用该方法的对象</p>
-<h3 id="构造函数调用模式"><a href="#构造函数调用模式" class="headerlink" title="构造函数调用模式"></a>构造函数调用模式</h3><p>形式：new 函数名()<br>this: new创建出来的对象</p>
-<h4 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h4><pre><code class="js">function createPerson(){
-    var o = new Object();
-    o.name = &quot;zs&quot;;
-    o.age = 18;
-    return o;
-}
-
-var p = createPerson();
-</code></pre>
-<h4 id="寄生模式"><a href="#寄生模式" class="headerlink" title="寄生模式"></a>寄生模式</h4><pre><code class="js">function Person(){
-    var o = new Object();
-    o.name = &quot;zs&quot;;
-    o.age = 18;
-    return o;
-}
-
-var p = new Person();
-</code></pre>
-<h3 id="上下文调用模式"><a href="#上下文调用模式" class="headerlink" title="上下文调用模式"></a>上下文调用模式</h3><p>在其他的调用模式中，this不可以赋值，也就不能改变<br>在上下文调用模式中，可以进行手动的设置this的值。</p>
-<h4 id="call"><a href="#call" class="headerlink" title="call"></a>call</h4><pre><code class="js">函数名.call(对象, 参数1, 参数2, 参数3...)
-</code></pre>
-<ol>
-<li>调用函数</li>
-<li>将函数内的this指向第一个参数中的对象</li>
-<li>将除第一个参数外的所有参数依次传给函数，做为实参<h4 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h4><pre><code class="js">函数名.apply(对象, 数组)
-</code></pre>
-</li>
-<li>调用函数</li>
-<li>将函数内的this指向第一个参数中的对象</li>
-<li>将第二个参数中的数组拆解开，将数组中的元素依次的传给函数当做实参</li>
-</ol>
-<h4 id="借用构造函数继承"><a href="#借用构造函数继承" class="headerlink" title="借用构造函数继承"></a>借用构造函数继承</h4><pre><code class="js">function Parent(){
-    this.money = 100000000000000;
-}
-
-function Son(){
-    Parent.call(this);
-    this.wife = &quot;凤姐&quot;;
-}
-
-var s = new Son();
-</code></pre>
-<ol>
-<li>使用new关键字创建了一个对象</li>
-<li>调用构造函数Son，将Son中的this指向刚才创建的对象</li>
-<li>在Son构造函数中，是用上下文调用模式去调用Parent函数，</li>
-<li>调用Person函数，将Parent中的this指向song中的this，也就是用new创建出来的那个对象</li>
-<li>Parent中会使用this给对象添加成员</li>
-<li>Parent调用结束，Son中的this也就有了Parent中添加的那些个成员</li>
-</ol>
-<p>将伪数组转换成数组</p>
-<pre><code class="js">var fakeArr = {
-    0:&quot;a&quot;,
-    1:&quot;b&quot;,
-    2:&quot;c&quot;,
-    length:3
-}
-
-var arr = [];
-
-Array.prototype.push.apply(arr, fakeArr);
-Array.prototype.concat.apply(arr, fakeArr);
-
-
-arr.concat.apply(arr, fakeArr);
-</code></pre>
-<p>求数组的最大值</p>
-<pre><code class="js">var arr = [1 ,2,3,3,4,4,34,3,43,43,43,4,34,3];
-
-var max = Math.max.apply(null, arr);
-//Math.max(1,2,3,43,4,3,43,43,43)
-</code></pre>
-
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="pagination" role="pagination">
-    
-    <a class="pull-left" href="/2016/12/18/初识H5 /" style="float: left;">
-        ← 初始 H5
-    </a>
-    
-    
-    <a class="pull-right" href="/2016/10/27/高级JavaScript（一）/">
-        高级 JavaScript (一) →
-    </a>
-    
-</nav>
-
-        <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016/10/28/高级JavaScript（二）/" data-title="高级 JavaScript (二)" data-url="http://azraa.top/2016/10/28/高级JavaScript（二）/"></div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"azraa"};
-(function() {
-	var ds = document.createElement('script');
-	ds.type = 'text/javascript';ds.async = true;
-	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	ds.charset = 'UTF-8';
-	(document.getElementsByTagName('head')[0] 
-	 || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
-</script>
-</div>
+        <div class="herofade beige-dk"></div>
     </div>
 </section>
 
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
 
+<!-- ============================ END Hero Image =========================== -->
+
+
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2017/04/23/Python/">初学Python</a></h4>
+                            
+                            <p><time datetime="2017-04-22T16:00:00.000Z"><a href="/2017/04/23/Python/">2017-04-23</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+</section> 
+
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>即便是 普通又渺小的我 也想在喜欢的人眼里闪闪发光啊</p>
+        </div>
+    </div>
+</section>
       
 <!-- ============================ Footer =========================== -->
 
